@@ -1,0 +1,47 @@
+Aggregated 67,238 user-week records to 1,000 person-level records (70 malicious).
+
+====================================================================================================
+A_training_unconstrained
+====================================================================================================
+  point estimate [minmax | baseline  ] insiders covered  46/70  AUC of U 0.6918  enrichment 2.23  covered persons 295
+  point estimate [minmax | calibrated] insiders covered  46/70  AUC of U 0.6918  enrichment 2.23  covered persons 295
+  point estimate [rank   | baseline  ] insiders covered  57/70  AUC of U 0.8563  enrichment 2.76  covered persons 295
+  point estimate [rank   | calibrated] insiders covered  55/70  AUC of U 0.8524  enrichment 2.66  covered persons 295
+  [minmax] calibrated vs baseline: gained 1, lost 1, Jaccard 0.980
+  [rank  ] calibrated vs baseline: gained 0, lost 2, Jaccard 0.941
+  [baseline  ] rank vs min-max: Jaccard 0.756; insiders only under rank 18, only under min-max 7
+  [calibrated] rank vs min-max: Jaccard 0.766; insiders only under rank 17, only under min-max 8
+
+  PAIRED CLUSTER BOOTSTRAP (persons, B=1000, seed 42): mean [95% percentile interval]  (share of replicates >0 / =0 / <0)
+   weight_effect_minmax_rate          +0.0036 [-0.0270, +0.0380]  (26% / 63% / 11%)   <- WEIGHT effect (calibrated - baseline)
+   weight_effect_minmax_auc           +0.0000 [-0.0024, +0.0022]  (52% / 0% / 47%)   <- WEIGHT effect (calibrated - baseline)
+   weight_effect_rank_rate            -0.0250 [-0.0946, +0.0282]  (9% / 18% / 72%)   <- WEIGHT effect (calibrated - baseline)
+   weight_effect_rank_auc             -0.0039 [-0.0072, -0.0009]  (0% / 0% / 100%)   <- WEIGHT effect (calibrated - baseline)
+   norm_effect_baseline_rate          +0.1634 [+0.0483, +0.2931]  (99% / 0% / 0%)   <- NORMALISATION effect (rank - min-max)
+   norm_effect_baseline_auc           +0.1647 [+0.1144, +0.2144]  (100% / 0% / 0%)   <- NORMALISATION effect (rank - min-max)
+   norm_effect_calibrated_rate        +0.1348 [+0.0156, +0.2667]  (98% / 1% / 1%)   <- NORMALISATION effect (rank - min-max)
+   norm_effect_calibrated_auc         +0.1608 [+0.1091, +0.2110]  (100% / 0% / 0%)   <- NORMALISATION effect (rank - min-max)
+
+====================================================================================================
+B_training_constrained
+====================================================================================================
+  point estimate [minmax | baseline  ] insiders covered  17/70  AUC of U 0.6918  enrichment 1.94  covered persons 125
+  point estimate [minmax | calibrated] insiders covered  17/70  AUC of U 0.6918  enrichment 1.94  covered persons 125
+  point estimate [rank   | baseline  ] insiders covered  31/70  AUC of U 0.8563  enrichment 3.54  covered persons 125
+  point estimate [rank   | calibrated] insiders covered  29/70  AUC of U 0.8524  enrichment 3.31  covered persons 125
+  [minmax] calibrated vs baseline: gained 0, lost 0, Jaccard 0.825
+  [rank  ] calibrated vs baseline: gained 0, lost 2, Jaccard 0.838
+  [baseline  ] rank vs min-max: Jaccard 0.506; insiders only under rank 16, only under min-max 2
+  [calibrated] rank vs min-max: Jaccard 0.412; insiders only under rank 16, only under min-max 4
+
+  PAIRED CLUSTER BOOTSTRAP (persons, B=1000, seed 42): mean [95% percentile interval]  (share of replicates >0 / =0 / <0)
+   weight_effect_minmax_rate          -0.0231 [-0.0886, +0.0000]  (0% / 40% / 60%)   <- WEIGHT effect (calibrated - baseline)
+   weight_effect_minmax_auc           +0.0000 [-0.0024, +0.0022]  (52% / 0% / 47%)   <- WEIGHT effect (calibrated - baseline)
+   weight_effect_rank_rate            -0.0239 [-0.0769, +0.0278]  (9% / 16% / 75%)   <- WEIGHT effect (calibrated - baseline)
+   weight_effect_rank_auc             -0.0039 [-0.0072, -0.0009]  (0% / 0% / 100%)   <- WEIGHT effect (calibrated - baseline)
+   norm_effect_baseline_rate          +0.1964 [+0.0972, +0.3031]  (100% / 0% / 0%)   <- NORMALISATION effect (rank - min-max)
+   norm_effect_baseline_auc           +0.1647 [+0.1144, +0.2144]  (100% / 0% / 0%)   <- NORMALISATION effect (rank - min-max)
+   norm_effect_calibrated_rate        +0.1955 [+0.0897, +0.3077]  (100% / 0% / 0%)   <- NORMALISATION effect (rank - min-max)
+   norm_effect_calibrated_auc         +0.1608 [+0.1091, +0.2110]  (100% / 0% / 0%)   <- NORMALISATION effect (rank - min-max)
+
+Saved: normalisation_sensitivity.csv

@@ -1,0 +1,31 @@
+Loaded 70 insider windows for dataset 4.2
+Labeled 67,238 rows: 322 malicious user-weeks (0.479%), 3,156 rows belong to a known insider user.
+Saved labels: A:\PhD IT\thesis-repo-final-v3.2\repo_v3\results\cert_userweek_labels.csv
+Training with 5-fold StratifiedGroupKFold grouped by user (322 positive rows, 1000 distinct users)...
+
+PER-FOLD METRICS (threshold 0.5):
+ fold  n_test_rows  n_test_positive  n_test_users  n_train_users  recall  precision     f1  roc_auc  pr_auc  user_overlap_train_test
+    1        13442               64           202            798  1.0000     0.0316 0.0612   0.9404  0.0400                        0
+    2        13441               68           200            800  0.9265     0.0291 0.0565   0.9006  0.0450                        0
+    3        13441               64           199            801  0.8906     0.0232 0.0452   0.9178  0.0448                        0
+    4        13481               67           198            802  0.8358     0.0344 0.0661   0.9117  0.0658                        0
+    5        13433               59           201            799  0.7797     0.0283 0.0545   0.9312  0.0628                        0
+
+Mean +/- SD across folds:
+  recall     0.8865 +/- 0.0844
+  precision  0.0293 +/- 0.0042
+  f1         0.0567 +/- 0.0078
+  roc_auc    0.9203 +/- 0.0157
+  pr_auc     0.0517 +/- 0.0117
+Hyperparameter search run: False
+
+Saved: A:\PhD IT\thesis-repo-final-v3.2\repo_v3\results\cert_threat_resource_features_with_confidence.csv
+count    67238.000000
+mean         0.178592
+std          0.255471
+min          0.001934
+25%          0.041564
+50%          0.051036
+75%          0.158923
+max          0.970838
+Name: confidence, dtype: float64

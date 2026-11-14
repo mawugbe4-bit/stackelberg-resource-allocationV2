@@ -1,0 +1,5 @@
+group,count,min,median,mean,max
+not an insider,930,5,72.0,68.90537634408602,73
+scenario 1 (rapid theft),30,30,43.5,45.0,64
+scenario 2 (gradual theft),30,32,46.0,47.53333333333333,68
+scenario 3 (sabotage),10,23,36.5,38.0,69

@@ -1,0 +1,9 @@
+# Minimum versions the code needs. This is NOT the lockfile: run_all.py writes results/pip_freeze.txt, the exact
+# versions of the environment that produced the results. scipy >= 1.9 is required for scipy.optimize.milp.
+numpy
+pandas
+scikit-learn
+scipy>=1.9
+shap
+matplotlib
+openpyxl

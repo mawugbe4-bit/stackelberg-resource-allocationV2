@@ -1,0 +1,13 @@
+CPU: Intel(R) Core(TM) i5-8600 CPU @ 3.10GHz | cores: 6 | Windows-11-10.0.26200-SP0
+Libraries: {'python': '3.14.6', 'numpy': '2.4.6', 'pandas': '3.0.3', 'scipy': '1.18.0', 'sklearn': '1.9.0', 'shap': '0.52.0', 'matplotlib': '3.11.0', 'openpyxl': '3.1.5'}
+Aggregated 67,238 user-week records to 1,000 person-level records (70 malicious).
+[A_training_unconstrained | baseline] greedy 0.00416s +/- 0.00012s (5 repeats, n=1,000 persons); SA 1.991s total for 10 seeds (0.1991s/seed, 10000 iterations)
+[A_training_unconstrained | calibrated] greedy 0.00416s +/- 0.00015s (5 repeats, n=1,000 persons); SA 1.948s total for 10 seeds (0.1948s/seed, 10000 iterations)
+[B_training_constrained | baseline] greedy 0.00393s +/- 0.00031s (5 repeats, n=1,000 persons); SA 1.949s total for 10 seeds (0.1949s/seed, 10000 iterations)
+[B_training_constrained | calibrated] greedy 0.00382s +/- 0.00023s (5 repeats, n=1,000 persons); SA 1.936s total for 10 seeds (0.1936s/seed, 10000 iterations)
+
+Classifier timing on 67,238 user-weeks with 322 positives (labels from cert_userweek_labels.csv -- must be the 322-style insider-window count, not every insider week)
+Training with 5-fold StratifiedGroupKFold grouped by user (322 positive rows, 1000 distinct users)...
+5-fold StratifiedGroupKFold training + out-of-fold prediction: 7.7056s (~1.5411s per fold)
+Inference on 67,238 instances: 0.1934s (0.00288 ms/instance)
+Saved: cert_timing_results_v5.csv

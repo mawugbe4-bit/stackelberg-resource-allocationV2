@@ -1,0 +1,3 @@
+40 instances (n=7, 5 resources, seed 20260930): MIP matched brute force on 40/40
+Greedy gap on these tight instances: optimal in 11/40; median 3.14%, mean 6.33%, max 31.40%
+Saved: bruteforce_instances.csv

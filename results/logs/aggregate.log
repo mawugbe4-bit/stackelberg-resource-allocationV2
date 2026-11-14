@@ -1,0 +1,26 @@
+Working hours: [06:00, 20:00); after-hours = hour < 6 or hour >= 20
+Archive check OK: all 6 required members present.
+Extracted: r4.2/logon.csv
+Extracted: r4.2/device.csv
+Extracted: r4.2/email.csv
+Extracted: r4.2/file.csv
+Extracted: r4.2/psychometric.csv
+logon.csv: 854,859 raw rows -> 67,238 distinct user-weeks (1,000 users); events kept = 854,859 (OK)
+device.csv: 405,380 raw rows -> 14,276 distinct user-weeks (265 users); events kept = 405,380 (OK)
+email.csv: 2,629,979 raw rows -> 67,226 distinct user-weeks (1,000 users); events kept = 2,629,979 (OK)
+file.csv: 445,581 raw rows -> 13,743 distinct user-weeks (264 users); events kept = 445,581 (OK)
+  ...processed 4,000,000 http.csv rows so far
+  ...processed 8,000,000 http.csv rows so far
+  ...processed 12,000,000 http.csv rows so far
+  ...processed 16,000,000 http.csv rows so far
+  ...processed 20,000,000 http.csv rows so far
+  ...processed 24,000,000 http.csv rows so far
+  ...processed 28,000,000 http.csv rows so far
+http.csv: 28,434,423 raw rows -> 67,234 distinct user-weeks (1,000 users); events kept = 28,434,423 (must equal raw rows: OK)
+Union of (user, week) keys across the five streams: 67,238 (distinct users 1,000)
+After outer joins + zero-fill: 67,238 user-weeks
+ATTRITION CHECK: rows in = union of keys = rows out = 67,238  ->  zero user-weeks dropped
+Saved raw (un-normalised) features: A:\PhD IT\thesis-repo-final-v3.2\repo_v3\results\cert_threat_resource_features_raw.csv
+Saved normalised features: A:\PhD IT\thesis-repo-final-v3.2\repo_v3\results\cert_threat_resource_features.csv  shape=(67238, 7)
+
+Log written to A:\PhD IT\thesis-repo-final-v3.2\repo_v3\results\aggregation_log.txt

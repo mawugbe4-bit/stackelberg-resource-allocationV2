@@ -1,0 +1,5 @@
+catalog_scenario,arm,k_minmax,k_rank,insiders_in_both,covered_minmax,covered_rank,jaccard_covered_sets,auc_minmax,auc_rank
+A_training_unconstrained,baseline,46,57,39,295,295,0.7559523809523809,0.6917665130568357,0.856305683563748
+A_training_unconstrained,calibrated,46,55,38,295,295,0.7664670658682635,0.6918125960061444,0.852442396313364
+B_training_constrained,baseline,17,31,15,125,125,0.5060240963855421,0.6917665130568357,0.856305683563748
+B_training_constrained,calibrated,17,29,13,125,125,0.4124293785310734,0.6918125960061444,0.852442396313364

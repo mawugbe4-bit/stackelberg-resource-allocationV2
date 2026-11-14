@@ -1,0 +1,27 @@
+RAW FEATURE DISTRIBUTIONS
+    level                       feature     n     min   median       p99       max     mean  share_zero  skewness  max_over_p99
+user-week                    impact_raw 67238  0.0000   0.0000  125.0000  208.0000   6.6269      0.7956    4.6786        1.6640
+user-week               propagation_raw 67238  1.0000  37.0000   83.0000  109.0000  38.5027      0.0000    0.3492        1.3133
+user-week                   evasion_raw 67238  0.0000   0.0000    0.1704    1.0000   0.0096      0.8717    4.7484        5.8677
+user-week                  total_events 67238  2.0000 530.0000 1266.0000 2195.0000 487.3765      0.0000    0.4676        1.7338
+   person      impact_raw (person mean)  1000  0.0000   0.0000  118.3890  159.2740   6.8326      0.7360    4.5314        1.3453
+   person propagation_raw (person mean)  1000  9.4167  38.9861   76.2671   89.5479  38.6568      0.0000    0.2604        1.1741
+   person     evasion_raw (person mean)  1000  0.0000   0.0000    0.1576    0.1648   0.0102      0.7890    3.7339        1.0456
+   person    total_events (person mean)  1000 60.0000 508.7014 1179.6553 2097.1389 487.6973      0.0000    0.3722        1.7778
+
+TENURE: active weeks per person
+                            count  min  median   mean  max
+group                                                     
+not an insider                930    5    72.0  68.91   73
+scenario 1 (rapid theft)       30   30    43.5  45.00   64
+scenario 2 (gradual theft)     30   32    46.0  47.53   68
+scenario 3 (sabotage)          10   23    36.5  38.00   69
+
+RANK-NORMALISATION CHECK (greedy, B=7000)
+        catalog_scenario        arm  k_minmax  k_rank  insiders_in_both  covered_minmax  covered_rank  jaccard_covered_sets  auc_minmax  auc_rank
+A_training_unconstrained   baseline        46      57                39             295           295                0.7560      0.6918    0.8563
+A_training_unconstrained calibrated        46      55                38             295           295                0.7665      0.6918    0.8524
+  B_training_constrained   baseline        17      31                15             125           125                0.5060      0.6918    0.8563
+  B_training_constrained calibrated        17      29                13             125           125                0.4124      0.6918    0.8524
+
+Saved: feature_distributions.csv, tenure_by_group.csv, rank_normalisation_check.csv

@@ -1,0 +1,43 @@
+Aggregated 67,238 user-week records to 1,000 person-level records (70 malicious).
+
+==========================================================================================
+A_training_unconstrained | baseline | greedy 4.072527 | exact 4.072527 (Time/iteration limit reached) | gap +0.000000 | T0 = 0.1 x median = 0.00039
+==========================================================================================
+  [a: proposals] boundary 80% / uniform 20%         mean 4.072527 SD 0.000000 | gain -0.000000 | 100.00% of greedy value | accepted 1
+  [a: proposals] uniform only                       mean 4.072527 SD 0.000000 | gain -0.000000 | 100.00% of greedy value | accepted 0
+  [b: seeding] greedy-seeded                      mean 4.072527 SD 0.000000 | gain -0.000000 | 100.00% of greedy value | accepted 1
+  [b: seeding] empty start                        mean 3.258695 SD 0.092633 | gain -0.813832 |  80.02% of greedy value | accepted 707
+  [c: capacity] constraints ON : greedy 4.072527, exact 4.072527, mix {'training': 285, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 10}
+  [c: capacity] constraints OFF: greedy 6.973515, exact 6.973515 (Optimal), mix {'training': 0, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 466}
+
+==========================================================================================
+A_training_unconstrained | calibrated | greedy 4.090383 | exact 4.090383 (Time/iteration limit reached) | gap +0.000000 | T0 = 0.1 x median = 0.00039
+==========================================================================================
+  [a: proposals] boundary 80% / uniform 20%         mean 4.090383 SD 0.000000 | gain +0.000000 | 100.00% of greedy value | accepted 1
+  [a: proposals] uniform only                       mean 4.090383 SD 0.000000 | gain +0.000000 | 100.00% of greedy value | accepted 0
+  [b: seeding] greedy-seeded                      mean 4.090383 SD 0.000000 | gain +0.000000 | 100.00% of greedy value | accepted 1
+  [b: seeding] empty start                        mean 3.264474 SD 0.064667 | gain -0.825909 |  79.81% of greedy value | accepted 706
+  [c: capacity] constraints ON : greedy 4.090383, exact 4.090383, mix {'training': 285, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 10}
+  [c: capacity] constraints OFF: greedy 7.000381, exact 7.000381 (Optimal), mix {'training': 0, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 466}
+
+==========================================================================================
+B_training_constrained | baseline | greedy 1.866947 | exact 1.868565 (Time/iteration limit reached) | gap +0.001618 | T0 = 0.1 x median = 0.00052
+==========================================================================================
+  [a: proposals] boundary 80% / uniform 20%         mean 1.866947 SD 0.000000 | gain +0.000000 |   0.0% of gap | 100.00% of greedy value | accepted 3
+  [a: proposals] uniform only                       mean 1.867081 SD 0.000197 | gain +0.000134 |   8.3% of gap | 100.01% of greedy value | accepted 2
+  [b: seeding] greedy-seeded                      mean 1.866947 SD 0.000000 | gain +0.000000 |   0.0% of gap | 100.00% of greedy value | accepted 3
+  [b: seeding] empty start                        mean 1.709070 SD 0.018241 | gain -0.157877 | -9757.8% of gap |  91.54% of greedy value | accepted 365
+  [c: capacity] constraints ON : greedy 1.866947, exact 1.868565, mix {'training': 5, 'monitoring': 10, 'access_review': 0, 'dlp': 100, 'ir': 10}
+  [c: capacity] constraints OFF: greedy 6.973515, exact 6.973515 (Optimal), mix {'training': 0, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 466}
+
+==========================================================================================
+B_training_constrained | calibrated | greedy 1.886544 | exact 1.888781 (Time/iteration limit reached) | gap +0.002238 | T0 = 0.1 x median = 0.00052
+==========================================================================================
+  [a: proposals] boundary 80% / uniform 20%         mean 1.886676 SD 0.000211 | gain +0.000133 |   5.9% of gap | 100.01% of greedy value | accepted 4
+  [a: proposals] uniform only                       mean 1.886632 SD 0.000187 | gain +0.000089 |   4.0% of gap | 100.00% of greedy value | accepted 2
+  [b: seeding] greedy-seeded                      mean 1.886676 SD 0.000211 | gain +0.000133 |   5.9% of gap | 100.01% of greedy value | accepted 4
+  [b: seeding] empty start                        mean 1.718829 SD 0.020905 | gain -0.167715 | -7495.2% of gap |  91.11% of greedy value | accepted 353
+  [c: capacity] constraints ON : greedy 1.886544, exact 1.888781, mix {'training': 5, 'monitoring': 10, 'access_review': 0, 'dlp': 100, 'ir': 10}
+  [c: capacity] constraints OFF: greedy 7.000381, exact 7.000381 (Optimal), mix {'training': 0, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 466}
+
+Saved: sa_ablation.csv

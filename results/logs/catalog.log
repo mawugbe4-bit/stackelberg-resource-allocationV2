@@ -1,0 +1,28 @@
+Aggregated 67,238 user-week records to 1,000 person-level records (70 malicious).
+... finished A_training_unconstrained
+... finished B_training_constrained
+
+==========================================================================================
+SUMMARY ACROSS ALL CATALOGUE VARIANTS (paired bootstrap, calibrated - baseline)
+==========================================================================================
+
+A_training_unconstrained: 30 variants
+  95% interval above 0: 0   below 0: 0   includes 0: 30
+  net insiders (calibrated - baseline) across variants: min 0, median 0, max 2
+  insiders covered, baseline: min 25, max 58 of 70
+
+B_training_constrained: 30 variants
+  95% interval above 0: 0   below 0: 0   includes 0: 30
+  net insiders (calibrated - baseline) across variants: min -3, median 0, max 1
+  insiders covered, baseline: min 11, max 48 of 70
+
+TARGETED VARIANTS
+       training_scenario                         variant  k_baseline  k_calibrated  insiders_gained  insiders_lost  diff_boot_mean  diff_p2.5  diff_p97.5   interval
+A_training_unconstrained IR_legacy_contrast (eff 0.3378)          46            46                1              1          0.0026    -0.0242      0.0286 includes 0
+A_training_unconstrained      DLP_forrester (eff 0.0507)          46            46                1              1          0.0026    -0.0242      0.0286 includes 0
+A_training_unconstrained    drop_confidence (3 criteria)          26            26                0              0          0.0000     0.0000      0.0000 includes 0
+  B_training_constrained IR_legacy_contrast (eff 0.3378)          17            17                0              0         -0.0204    -0.0747      0.0000 includes 0
+  B_training_constrained      DLP_forrester (eff 0.0507)          17            17                0              0         -0.0204    -0.0747      0.0000 includes 0
+  B_training_constrained    drop_confidence (3 criteria)          14            15                1              0          0.0052    -0.0469      0.0448 includes 0
+
+Saved: catalog_sensitivity.csv

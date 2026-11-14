@@ -1,0 +1,29 @@
+n = 67,238 user-weeks; positives = 322 (0.479%); negatives = 66,916
+
+THRESHOLD SWEEP
+ threshold  TP    FP  FN    TN  TPR_recall    FPR  precision     F1  flags  share_of_flags_on_non_insiders
+       0.1 315 19856   7 47060      0.9783 0.2967     0.0156 0.0307  20171                          0.9844
+       0.2 308 14791  14 52125      0.9565 0.2210     0.0204 0.0399  15099                          0.9796
+       0.3 301 12100  21 54816      0.9348 0.1808     0.0243 0.0473  12401                          0.9757
+       0.4 292 10647  30 56269      0.9068 0.1591     0.0267 0.0519  10939                          0.9733
+       0.5 286  9619  36 57297      0.8882 0.1437     0.0289 0.0559   9905                          0.9711
+       0.6 276  8854  46 58062      0.8571 0.1323     0.0302 0.0584   9130                          0.9698
+       0.7 258  7871  64 59045      0.8012 0.1176     0.0317 0.0611   8129                          0.9683
+       0.8 110  2272 212 64644      0.3416 0.0340     0.0462 0.0814   2382                          0.9538
+       0.9  24   310 298 66606      0.0745 0.0046     0.0719 0.0732    334                          0.9281
+
+AT 0.5: TP=286 FP=9,619 FN=36 TN=57,297 | recall 0.8882 FPR 0.1437 precision 0.0289 F1 0.0559
+        97.1% of all flags fall on user-weeks of people who did nothing (base rate of positives is 0.48%).
+
+PR-AUC (average precision) = 0.0437 against a prevalence baseline of 0.0048 (9.1x baseline); ROC-AUC = 0.9196
+
+FALSE NEGATIVES at 0.5 -- insider-window weeks missed, by insider scenario
+ scenario  positive_weeks  missed_weeks  missed_share  insiders  insiders_never_flagged_in_any_window_week
+        1              52            22         0.423        30                                          7
+        2             260            12         0.046        30                                          0
+        3              10             2         0.200        10                                          2
+
+FALSE POSITIVES at 0.5: 9,619 user-weeks from 301 distinct people (of 1,000 people with at least one non-malicious week); per-person flagged weeks: median 33, 90th percentile 68, max 73; the most-flagged 10% of those people account for 21.8% of false flags.
+Mean features, false positives vs correctly-cleared weeks: impact 0.070 vs 0.025, propagation 0.377 vs 0.342, evasion 0.015 vs 0.009
+
+Saved: confidence_threshold_sweep.csv, confidence_confusion_matrix.csv, confidence_pr_curve.png, confidence_false_negatives_by_scenario.csv

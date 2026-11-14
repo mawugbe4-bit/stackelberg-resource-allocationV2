@@ -1,0 +1,82 @@
+Aggregated 67,238 user-week records to 1,000 person-level records (70 malicious).
+
+==============================================================================
+POINT ESTIMATES, full sample (exact; no bootstrap) -- A_training_unconstrained
+==============================================================================
+person-level base rate of insiders = 70/1000 = 0.070;  metric resolution = 1/70 = 0.0143
+                                  metric  baseline  calibrated
+               covered persons (of 1000)  295.0000    295.0000
+              insiders covered k (of 70)   46.0000     46.0000
+          insiders GAINED by calibration       NaN      1.0000
+            insiders LOST by calibration       NaN      1.0000
+    net insiders (calibrated - baseline)       NaN      0.0000
+         Jaccard overlap of covered sets       NaN      0.9799
+          persons whose coverage differs       NaN      6.0000
+          Spearman rho of U between arms       NaN      0.9995
+           coverage rate of insiders k/n    0.6571      0.6571
+                   overall coverage rate    0.2950      0.2950
+enrichment (insider rate / overall rate)    2.2276      2.2276
+ effectiveness-weighted insider coverage    0.0290      0.0290
+     AUC of U (insiders vs non-insiders)    0.6918      0.6918
+                            budget spent 6990.0000   6990.0000
+  scenario 1: insiders covered (k of 30)    6.0000      7.0000
+  scenario 2: insiders covered (k of 30)   30.0000     29.0000
+  scenario 3: insiders covered (k of 10)   10.0000     10.0000
+   ... 250/1000 replicates
+   ... 500/1000 replicates
+   ... 750/1000 replicates
+   ... 1000/1000 replicates
+
+==============================================================================
+CLUSTER BOOTSTRAP (persons, B=1000, seed=42) -- A_training_unconstrained
+==============================================================================
+insider coverage rate              baseline 0.6382+/-0.0599  calibrated 0.6417+/-0.0591  | diff +0.0036 (SD 0.0141) 95% interval [-0.0270, +0.0380]  (>0 in 26%, =0 in 63%, <0 in 11% of replicates)
+effectiveness-weighted coverage    baseline 0.0282+/-0.0026  calibrated 0.0284+/-0.0026  | diff +0.0002 (SD 0.0006) 95% interval [-0.0012, +0.0016]  (>0 in 30%, =0 in 59%, <0 in 11% of replicates)
+AUC of U                           baseline 0.6913+/-0.0319  calibrated 0.6913+/-0.0319  | diff +0.0000 (SD 0.0012) 95% interval [-0.0024, +0.0022]  (>0 in 52%, =0 in 0%, <0 in 47% of replicates)
+enrichment                         baseline 2.1633+/-0.2029  calibrated 2.1754+/-0.2003  | diff +0.0121 (SD 0.0479) 95% interval [-0.0916, +0.1287]  (>0 in 26%, =0 in 63%, <0 in 11% of replicates)
+overall coverage rate              baseline 0.2950+/-0.0000  calibrated 0.2950+/-0.0000  | diff +0.0000 (SD 0.0000) 95% interval [+0.0000, +0.0000]  (>0 in 0%, =0 in 100%, <0 in 0% of replicates)
+subgroup 1 (rapid theft) rate      baseline 0.1954+/-0.0796  calibrated 0.2134+/-0.0773  | diff +0.0180 (SD 0.0307) 95% interval [+0.0000, +0.1035]  (>0 in 33%, =0 in 67%, <0 in 0% of replicates)
+subgroup 2 (gradual theft) rate    baseline 0.9617+/-0.0599  calibrated 0.9526+/-0.0660  | diff -0.0090 (SD 0.0240) 95% interval [-0.0800, +0.0245]  (>0 in 3%, =0 in 76%, <0 in 21% of replicates)
+subgroup 3 (sabotage, n=10) rate   baseline 0.9998+/-0.0059  calibrated 1.0000+/-0.0000  | diff +0.0003 (SD 0.0059) 95% interval [+0.0000, +0.0000]  (>0 in 0%, =0 in 100%, <0 in 0% of replicates)
+
+==============================================================================
+POINT ESTIMATES, full sample (exact; no bootstrap) -- B_training_constrained
+==============================================================================
+person-level base rate of insiders = 70/1000 = 0.070;  metric resolution = 1/70 = 0.0143
+                                  metric  baseline  calibrated
+               covered persons (of 1000)  125.0000    125.0000
+              insiders covered k (of 70)   17.0000     17.0000
+          insiders GAINED by calibration       NaN      0.0000
+            insiders LOST by calibration       NaN      0.0000
+    net insiders (calibrated - baseline)       NaN      0.0000
+         Jaccard overlap of covered sets       NaN      0.8248
+          persons whose coverage differs       NaN     24.0000
+          Spearman rho of U between arms       NaN      0.9995
+           coverage rate of insiders k/n    0.2429      0.2429
+                   overall coverage rate    0.1250      0.1250
+enrichment (insider rate / overall rate)    1.9429      1.9429
+ effectiveness-weighted insider coverage    0.0101      0.0102
+     AUC of U (insiders vs non-insiders)    0.6918      0.6918
+                            budget spent 6955.0000   6955.0000
+  scenario 1: insiders covered (k of 30)    1.0000      1.0000
+  scenario 2: insiders covered (k of 30)   12.0000     12.0000
+  scenario 3: insiders covered (k of 10)    4.0000      4.0000
+   ... 250/1000 replicates
+   ... 500/1000 replicates
+   ... 750/1000 replicates
+   ... 1000/1000 replicates
+
+==============================================================================
+CLUSTER BOOTSTRAP (persons, B=1000, seed=42) -- B_training_constrained
+==============================================================================
+insider coverage rate              baseline 0.2492+/-0.0504  calibrated 0.2261+/-0.0495  | diff -0.0231 (SD 0.0267) 95% interval [-0.0886, +0.0000]  (>0 in 0%, =0 in 40%, <0 in 60% of replicates)
+effectiveness-weighted coverage    baseline 0.0103+/-0.0021  calibrated 0.0096+/-0.0021  | diff -0.0007 (SD 0.0010) 95% interval [-0.0030, +0.0004]  (>0 in 20%, =0 in 16%, <0 in 63% of replicates)
+AUC of U                           baseline 0.6913+/-0.0319  calibrated 0.6913+/-0.0319  | diff +0.0000 (SD 0.0012) 95% interval [-0.0024, +0.0022]  (>0 in 52%, =0 in 0%, <0 in 47% of replicates)
+enrichment                         baseline 1.9935+/-0.4032  calibrated 1.8088+/-0.3963  | diff -0.1847 (SD 0.2136) 95% interval [-0.7089, +0.0000]  (>0 in 0%, =0 in 40%, <0 in 60% of replicates)
+overall coverage rate              baseline 0.1250+/-0.0000  calibrated 0.1250+/-0.0000  | diff +0.0000 (SD 0.0000) 95% interval [+0.0000, +0.0000]  (>0 in 0%, =0 in 100%, <0 in 0% of replicates)
+subgroup 1 (rapid theft) rate      baseline 0.0350+/-0.0340  calibrated 0.0350+/-0.0340  | diff +0.0000 (SD 0.0000) 95% interval [+0.0000, +0.0000]  (>0 in 0%, =0 in 100%, <0 in 0% of replicates)
+subgroup 2 (gradual theft) rate    baseline 0.4181+/-0.0890  calibrated 0.3645+/-0.0956  | diff -0.0537 (SD 0.0610) 95% interval [-0.1925, +0.0000]  (>0 in 0%, =0 in 40%, <0 in 60% of replicates)
+subgroup 3 (sabotage, n=10) rate   baseline 0.3860+/-0.1642  calibrated 0.3865+/-0.1647  | diff +0.0005 (SD 0.0085) 95% interval [+0.0000, +0.0000]  (>0 in 0%, =0 in 100%, <0 in 0% of replicates)
+
+Saved: primary_analysis_point_estimates.csv, primary_analysis_bootstrap.csv, primary_analysis_bootstrap_replicates_<scenario>.csv
+NOTE: subgroup contrasts are SUBGROUP DIFFERENCES between two deterministic policies, not causal treatment effects (no causal estimator is used).

@@ -1,0 +1,25 @@
+catalog_scenario,arm,component,setting,sa_mean,sa_sd,mean_gain_over_greedy,share_of_available_gap,share_of_greedy_value,mean_accepted_moves,greedy_value,exact_reference,mix
+A_training_unconstrained,baseline,a: proposals,boundary 80% / uniform 20%,4.072526619307053,9.362222582871203e-16,-8.881784197001252e-16,,0.9999999999999998,0.7,4.0725266193070535,4.072526619307069,
+A_training_unconstrained,baseline,a: proposals,uniform only,4.072526619307053,9.362222582871203e-16,-8.881784197001252e-16,,0.9999999999999998,0.0,4.0725266193070535,4.072526619307069,
+A_training_unconstrained,baseline,b: seeding,greedy-seeded,4.072526619307053,9.362222582871203e-16,-8.881784197001252e-16,,0.9999999999999998,0.7,4.0725266193070535,4.072526619307069,
+A_training_unconstrained,baseline,b: seeding,empty start,3.258694517216738,0.09263322316685005,-0.8138321020903154,,0.8001653081327704,707.2,4.0725266193070535,4.072526619307069,
+A_training_unconstrained,baseline,c: capacity,constraints on,,,,,,,4.0725266193070535,4.072526619307069,"{'training': 285, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 10}"
+A_training_unconstrained,baseline,c: capacity,constraints off,,,,,,,6.973515120008662,6.9735151200086625,"{'training': 0, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 466}"
+A_training_unconstrained,calibrated,a: proposals,boundary 80% / uniform 20%,4.090382980547511,0.0,1.7763568394002505e-15,,1.0000000000000004,0.6,4.090382980547509,4.0903829805475524,
+A_training_unconstrained,calibrated,a: proposals,uniform only,4.090382980547511,0.0,1.7763568394002505e-15,,1.0000000000000004,0.3,4.090382980547509,4.0903829805475524,
+A_training_unconstrained,calibrated,b: seeding,greedy-seeded,4.090382980547511,0.0,1.7763568394002505e-15,,1.0000000000000004,0.6,4.090382980547509,4.0903829805475524,
+A_training_unconstrained,calibrated,b: seeding,empty start,3.264474062187799,0.06466684886673707,-0.8259089183597101,,0.7980851860846634,706.2,4.090382980547509,4.0903829805475524,
+A_training_unconstrained,calibrated,c: capacity,constraints on,,,,,,,4.090382980547509,4.0903829805475524,"{'training': 285, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 10}"
+A_training_unconstrained,calibrated,c: capacity,constraints off,,,,,,,7.000381288108433,7.000381288108434,"{'training': 0, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 466}"
+B_training_constrained,baseline,a: proposals,boundary 80% / uniform 20%,1.8669465885584526,2.340555645717801e-16,2.220446049250313e-16,1.3723794538220822e-13,1.0000000000000002,2.7,1.8669465885584524,1.8685645419918606,
+B_training_constrained,baseline,a: proposals,uniform only,1.8670808700866384,0.00019662169216628228,0.0001342815281859533,0.08299468044830594,1.0000719257471042,1.7,1.8669465885584524,1.8685645419918606,
+B_training_constrained,baseline,b: seeding,greedy-seeded,1.8669465885584526,2.340555645717801e-16,2.220446049250313e-16,1.3723794538220822e-13,1.0000000000000002,2.7,1.8669465885584524,1.8685645419918606,
+B_training_constrained,baseline,b: seeding,empty start,1.7090695748345552,0.01824098492627206,-0.15787701372389717,-97.57821854695209,0.9154357094672962,365.1,1.8669465885584524,1.8685645419918606,
+B_training_constrained,baseline,c: capacity,constraints on,,,,,,,1.8669465885584524,1.8685645419918606,"{'training': 5, 'monitoring': 10, 'access_review': 0, 'dlp': 100, 'ir': 10}"
+B_training_constrained,baseline,c: capacity,constraints off,,,,,,,6.973515120008662,6.9735151200086625,"{'training': 0, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 466}"
+B_training_constrained,calibrated,a: proposals,boundary 80% / uniform 20%,1.8866762225634734,0.0002106763806466537,0.00013260739547060751,0.05926258984029924,1.00007029118988,4.0,1.8865436151680028,1.8887812392041436,
+B_training_constrained,calibrated,a: proposals,uniform only,1.8866322637882607,0.0001870841323153443,8.864862025781406e-05,0.039617298896513865,1.0000469899659594,1.5,1.8865436151680028,1.8887812392041436,
+B_training_constrained,calibrated,b: seeding,greedy-seeded,1.8866762225634734,0.0002106763806466537,0.00013260739547060751,0.05926258984029924,1.00007029118988,4.0,1.8865436151680028,1.8887812392041436,
+B_training_constrained,calibrated,b: seeding,empty start,1.7188287736869647,0.020905341182562338,-0.1677148414810381,-74.95219874840689,0.9110994094530369,353.1,1.8865436151680028,1.8887812392041436,
+B_training_constrained,calibrated,c: capacity,constraints on,,,,,,,1.8865436151680028,1.8887812392041436,"{'training': 5, 'monitoring': 10, 'access_review': 0, 'dlp': 100, 'ir': 10}"
+B_training_constrained,calibrated,c: capacity,constraints off,,,,,,,7.000381288108433,7.000381288108434,"{'training': 0, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 466}"

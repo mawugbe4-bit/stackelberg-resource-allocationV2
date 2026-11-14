@@ -1,0 +1,48 @@
+Aggregated 67,238 user-week records to 1,000 person-level records (70 malicious).
+
+######################################################################
+CATALOG SCENARIO: A_training_unconstrained
+######################################################################
+
+[A_training_unconstrained, baseline] solving (1000 persons x 5 resources = 5000 binary variables; limit 300s, relative gap 1e-06)...
+  Greedy value:  4.072527
+  Best value FOUND: 4.072527 (status: Time/iteration limit reached, 300.0s) -- NOT proven optimal
+  Proven upper bound 4.075870 => greedy is at most 0.003344 (0.0820%) below the true optimum; true gap lies in [0.0000%, 0.0820%]
+  Resource mix greedy: {'training': 285, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 10}  (spent 6990.00)
+  Resource mix best found: {'training': 285, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 10}  (spent 6990.00)
+
+[A_training_unconstrained, calibrated] solving (1000 persons x 5 resources = 5000 binary variables; limit 300s, relative gap 1e-06)...
+  Greedy value:  4.090383
+  Best value FOUND: 4.090383 (status: Time/iteration limit reached, 300.1s) -- NOT proven optimal
+  Proven upper bound 4.093709 => greedy is at most 0.003326 (0.0813%) below the true optimum; true gap lies in [0.0000%, 0.0813%]
+  Resource mix greedy: {'training': 285, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 10}  (spent 6990.00)
+  Resource mix best found: {'training': 285, 'monitoring': 0, 'access_review': 0, 'dlp': 0, 'ir': 10}  (spent 6990.00)
+
+######################################################################
+CATALOG SCENARIO: B_training_constrained
+######################################################################
+
+[B_training_constrained, baseline] solving (1000 persons x 5 resources = 5000 binary variables; limit 300s, relative gap 1e-06)...
+  Greedy value:  1.866947
+  Best value FOUND: 1.868565 (status: Time/iteration limit reached, 300.3s) -- NOT proven optimal
+  Proven upper bound 1.876013 => greedy is at most 0.009066 (0.4833%) below the true optimum; true gap lies in [0.0866%, 0.4833%]
+  Resource mix greedy: {'training': 5, 'monitoring': 10, 'access_review': 0, 'dlp': 100, 'ir': 10}  (spent 6955.00)
+  Resource mix best found: {'training': 5, 'monitoring': 10, 'access_review': 0, 'dlp': 100, 'ir': 10}  (spent 6955.00)
+
+[B_training_constrained, calibrated] solving (1000 persons x 5 resources = 5000 binary variables; limit 300s, relative gap 1e-06)...
+  Greedy value:  1.886544
+  Best value FOUND: 1.888781 (status: Time/iteration limit reached, 300.3s) -- NOT proven optimal
+  Proven upper bound 1.896498 => greedy is at most 0.009954 (0.5249%) below the true optimum; true gap lies in [0.1185%, 0.5249%]
+  Resource mix greedy: {'training': 5, 'monitoring': 10, 'access_review': 0, 'dlp': 100, 'ir': 10}  (spent 6955.00)
+  Resource mix best found: {'training': 5, 'monitoring': 10, 'access_review': 0, 'dlp': 100, 'ir': 10}  (spent 6955.00)
+
+======================================================================
+SUMMARY
+======================================================================
+        catalog_scenario weight_set  greedy_value  best_found_value  proven_optimal  gap_pct_vs_best_found  max_possible_gap_pct  solve_time_s
+A_training_unconstrained   baseline      4.072527          4.072527           False               0.000000              0.082035    300.046884
+A_training_unconstrained calibrated      4.090383          4.090383           False               0.000000              0.081255    300.085123
+  B_training_constrained   baseline      1.866947          1.868565           False               0.086588              0.483266    300.255090
+  B_training_constrained calibrated      1.886544          1.888781           False               0.118469              0.524858    300.299256
+
+Saved: cert_exact_optimum_results_v3.csv  (repeated 'HighsMipSolverData' lines are harmless solver messages)

@@ -1,0 +1,107 @@
+Aggregated 67,238 user-week records to 1,000 person-level records (70 malicious).
+
+##############################################################################
+CATALOG SCENARIO: A_training_unconstrained
+##############################################################################
+
+==============================================================================
+ARM: baseline
+==============================================================================
+Greedy value = 4.072527
+  Resource usage under greedy:
+    training       used    285 of capacity 100,000
+    monitoring     used      0 of capacity      10
+    access_review  used      0 of capacity       5
+    dlp            used      0 of capacity 100,000
+    ir             used     10 of capacity      10
+    (unassigned)      705
+  Spend 6990.00 of 7000; UNSPENT 10.00. Cheapest resource with spare capacity: training at 24.00 -> unspent budget is below that cost, so no further assignment is possible
+|delta value| over 867 single-move proposals from greedy: median 0.00387, IQR [0.00190, 0.00664], p5 0.00027, p95 0.01150, max 0.03277
+Legacy T0 = 1000 is 258,297 x the median |delta|.
+Exact reference: 4.072527 (Time/iteration limit reached); available gap over greedy = +0.000000 (0.000%)
+SA, 10 seeds per schedule, 10000 iterations each:
+  legacy T0=1000         T0=1000       mean 4.072527 SD 0.000000 min 4.072527 max 4.072527 | gain mean -0.000000, best -0.000000
+  T0=3 x median|d|       T0=0.011615   mean 4.072527 SD 0.000000 min 4.072527 max 4.072527 | gain mean -0.000000, best -0.000000
+  T0=1 x median|d|       T0=0.0038715  mean 4.072527 SD 0.000000 min 4.072527 max 4.072527 | gain mean -0.000000, best -0.000000 <- RULE-BASED PRIMARY (T0 = median |delta|)
+  T0=0.3 x median|d|     T0=0.0011615  mean 4.072527 SD 0.000000 min 4.072527 max 4.072527 | gain mean -0.000000, best -0.000000
+  T0=0.1 x median|d|     T0=0.00038715 mean 4.072527 SD 0.000000 min 4.072527 max 4.072527 | gain mean -0.000000, best -0.000000
+  T0=0.03 x median|d|    T0=0.00011615 mean 4.072527 SD 0.000000 min 4.072527 max 4.072527 | gain mean -0.000000, best -0.000000
+  No schedule improved on greedy in this cell (mean gain <= 1e-9 for every schedule).
+
+==============================================================================
+ARM: calibrated
+==============================================================================
+Greedy value = 4.090383
+  Resource usage under greedy:
+    training       used    285 of capacity 100,000
+    monitoring     used      0 of capacity      10
+    access_review  used      0 of capacity       5
+    dlp            used      0 of capacity 100,000
+    ir             used     10 of capacity      10
+    (unassigned)      705
+  Spend 6990.00 of 7000; UNSPENT 10.00. Cheapest resource with spare capacity: training at 24.00 -> unspent budget is below that cost, so no further assignment is possible
+|delta value| over 867 single-move proposals from greedy: median 0.00388, IQR [0.00188, 0.00663], p5 0.00021, p95 0.01140, max 0.03211
+Legacy T0 = 1000 is 257,909 x the median |delta|.
+Exact reference: 4.090383 (Time/iteration limit reached); available gap over greedy = +0.000000 (0.000%)
+SA, 10 seeds per schedule, 10000 iterations each:
+  legacy T0=1000         T0=1000       mean 4.090383 SD 0.000000 min 4.090383 max 4.090383 | gain mean +0.000000, best +0.000000
+  T0=3 x median|d|       T0=0.011632   mean 4.090383 SD 0.000000 min 4.090383 max 4.090383 | gain mean +0.000000, best +0.000000
+  T0=1 x median|d|       T0=0.0038773  mean 4.090383 SD 0.000000 min 4.090383 max 4.090383 | gain mean +0.000000, best +0.000000 <- RULE-BASED PRIMARY (T0 = median |delta|)
+  T0=0.3 x median|d|     T0=0.0011632  mean 4.090383 SD 0.000000 min 4.090383 max 4.090383 | gain mean +0.000000, best +0.000000
+  T0=0.1 x median|d|     T0=0.00038773 mean 4.090383 SD 0.000000 min 4.090383 max 4.090383 | gain mean +0.000000, best +0.000000
+  T0=0.03 x median|d|    T0=0.00011632 mean 4.090383 SD 0.000000 min 4.090383 max 4.090383 | gain mean +0.000000, best +0.000000
+  No schedule improved on greedy in this cell (mean gain <= 1e-9 for every schedule).
+
+##############################################################################
+CATALOG SCENARIO: B_training_constrained
+##############################################################################
+
+==============================================================================
+ARM: baseline
+==============================================================================
+Greedy value = 1.866947
+  Resource usage under greedy:
+    training       used      5 of capacity       5
+    monitoring     used     10 of capacity      10
+    access_review  used      0 of capacity       5
+    dlp            used    100 of capacity 100,000
+    ir             used     10 of capacity      10
+    (unassigned)      875
+  Spend 6955.00 of 7000; UNSPENT 45.00. Cheapest resource with spare capacity: dlp at 63.25 -> unspent budget is below that cost, so no further assignment is possible
+|delta value| over 858 single-move proposals from greedy: median 0.00518, IQR [0.00271, 0.00894], p5 0.00053, p95 0.01348, max 0.03277
+Legacy T0 = 1000 is 193,048 x the median |delta|.
+Exact reference: 1.868565 (Time/iteration limit reached); available gap over greedy = +0.001618 (0.087%)
+SA, 10 seeds per schedule, 10000 iterations each:
+  legacy T0=1000         T0=1000       mean 1.866947 SD 0.000000 min 1.866947 max 1.866947 | gain mean +0.000000, best +0.000000 | mean gain = 0.0% of available gap
+  T0=3 x median|d|       T0=0.01554    mean 1.866947 SD 0.000000 min 1.866947 max 1.866947 | gain mean +0.000000, best +0.000000 | mean gain = 0.0% of available gap
+  T0=1 x median|d|       T0=0.0051801  mean 1.866947 SD 0.000000 min 1.866947 max 1.866947 | gain mean +0.000000, best +0.000000 | mean gain = 0.0% of available gap <- RULE-BASED PRIMARY (T0 = median |delta|)
+  T0=0.3 x median|d|     T0=0.001554   mean 1.866947 SD 0.000000 min 1.866947 max 1.866947 | gain mean +0.000000, best +0.000000 | mean gain = 0.0% of available gap
+  T0=0.1 x median|d|     T0=0.00051801 mean 1.866947 SD 0.000000 min 1.866947 max 1.866947 | gain mean +0.000000, best +0.000000 | mean gain = 0.0% of available gap
+  T0=0.03 x median|d|    T0=0.0001554  mean 1.867048 SD 0.000142 min 1.866947 max 1.867304 | gain mean +0.000101, best +0.000358 | mean gain = 6.3% of available gap
+  Empirically best schedule in this cell (highest mean value): T0=0.03 x median|d| (mean gain +0.000101) -- selected AFTER seeing results; reported as a sensitivity finding, not as a pre-specified choice.
+
+==============================================================================
+ARM: calibrated
+==============================================================================
+Greedy value = 1.886544
+  Resource usage under greedy:
+    training       used      5 of capacity       5
+    monitoring     used     10 of capacity      10
+    access_review  used      0 of capacity       5
+    dlp            used    100 of capacity 100,000
+    ir             used     10 of capacity      10
+    (unassigned)      875
+  Spend 6955.00 of 7000; UNSPENT 45.00. Cheapest resource with spare capacity: dlp at 63.25 -> unspent budget is below that cost, so no further assignment is possible
+|delta value| over 861 single-move proposals from greedy: median 0.00524, IQR [0.00277, 0.00898], p5 0.00053, p95 0.01325, max 0.03211
+Legacy T0 = 1000 is 190,990 x the median |delta|.
+Exact reference: 1.888781 (Time/iteration limit reached); available gap over greedy = +0.002238 (0.118%)
+SA, 10 seeds per schedule, 10000 iterations each:
+  legacy T0=1000         T0=1000       mean 1.886544 SD 0.000000 min 1.886544 max 1.886544 | gain mean -0.000000, best +0.000000 | mean gain = -0.0% of available gap
+  T0=3 x median|d|       T0=0.015708   mean 1.886544 SD 0.000000 min 1.886544 max 1.886544 | gain mean -0.000000, best +0.000000 | mean gain = -0.0% of available gap
+  T0=1 x median|d|       T0=0.0052359  mean 1.886544 SD 0.000000 min 1.886544 max 1.886544 | gain mean -0.000000, best +0.000000 | mean gain = -0.0% of available gap <- RULE-BASED PRIMARY (T0 = median |delta|)
+  T0=0.3 x median|d|     T0=0.0015708  mean 1.886544 SD 0.000000 min 1.886544 max 1.886544 | gain mean -0.000000, best +0.000000 | mean gain = -0.0% of available gap
+  T0=0.1 x median|d|     T0=0.00052359 mean 1.886676 SD 0.000211 min 1.886544 max 1.887106 | gain mean +0.000133, best +0.000562 | mean gain = 5.9% of available gap
+  T0=0.03 x median|d|    T0=0.00015708 mean 1.886879 SD 0.000312 min 1.886544 max 1.887500 | gain mean +0.000335, best +0.000957 | mean gain = 15.0% of available gap
+  Empirically best schedule in this cell (highest mean value): T0=0.03 x median|d| (mean gain +0.000335) -- selected AFTER seeing results; reported as a sensitivity finding, not as a pre-specified choice.
+
+Iterations actually run: min 10000, max 10000 (target 10000). Saved: sa_per_seed_results.csv, sa_summary.csv

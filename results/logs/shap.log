@@ -1,0 +1,27 @@
+Loaded 67,238 rows, 322 malicious.
+Fitting final classifier on the full labelled dataset (for interpretability, not for unbiased per-row prediction)...
+Computing SHAP values (TreeExplainer)...
+
+======================================================================
+GLOBAL FEATURE IMPORTANCE (magnitude, global signed mean, AND value-SHAP correlation)
+======================================================================
+  impact          |SHAP|=0.35327 (79.9% of total)
+    global signed mean = -0.26536 (offset by the class-weighted baseline -- see identity below)
+    value-SHAP correlation = +0.2899 (higher values -> MORE evidence of malicious)
+  evasion         |SHAP|=0.06558 (14.8% of total)
+    global signed mean = -0.04134 (offset by the class-weighted baseline -- see identity below)
+    value-SHAP correlation = +0.6298 (higher values -> MORE evidence of malicious)
+  propagation     |SHAP|=0.02322 (5.3% of total)
+    global signed mean = -0.01217 (offset by the class-weighted baseline -- see identity below)
+    value-SHAP correlation = -0.3988 (higher values -> LESS evidence of malicious)
+======================================================================
+IDENTITY: explainer baseline = 0.5000; mean prediction on this data = 0.1811; sum of per-feature mean signed SHAP = -0.3189  (mean prediction - baseline = -0.3189)
+SHAP values sum, per instance, to (prediction - baseline), so the SUM of the global mean signed values
+equals (mean prediction - baseline). With class_weight='balanced' the baseline is ~0.5 while the average
+prediction on the real, mostly non-malicious data is far lower, so the global means are negative for every
+feature whatever the features do. They are NOT a direction finding; the value-SHAP correlation is.
+======================================================================
+
+Saved bar plot: A:\PhD IT\thesis-repo-final-v3.2\repo_v3\results\shap_feature_importance_bar_v4.png
+Saved beeswarm plot: A:\PhD IT\thesis-repo-final-v3.2\repo_v3\results\shap_feature_importance_beeswarm_v4.png
+Saved: A:\PhD IT\thesis-repo-final-v3.2\repo_v3\results\shap_feature_importance_v4.csv
